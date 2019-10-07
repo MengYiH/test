@@ -1,0 +1,25 @@
+#include<stdio.h>
+struct worker
+{
+	char name[10];
+	double a;//基本工资
+	double b;//浮动工资
+	double c;//支出
+}w[1000];
+main ()
+{
+	int N;
+	double sum[1000]; 
+	scanf("%d",&N);
+	int i,j;
+	for (i=0;i<N;i++)
+	{
+		scanf ("%s %lf %lf %lf",w[i].name,&w[i].a,&w[i].b,&w[i].c); 
+	}
+	for (i=0;i<N;i++)
+	{
+		sum[i]=w[i].a + w[i].b - w[i].c;
+		printf ("%s %.2lf\n",w[i].name,sum[i]);
+	}
+	return 0;
+}
